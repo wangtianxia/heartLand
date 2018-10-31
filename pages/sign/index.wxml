@@ -1,0 +1,145 @@
+<!--pages/sign/index.wxml-->
+<scroll-view scroll-y wx:if="{{isgift}}">
+    <view class='view-gift'>
+        <view class='view-giftinfo'>
+            <!-- 当前奖池 -->
+            <text class='text-yes'>{{toptext}}</text>
+            <!-- 多少元 -->
+            <text class='text-gold'>{{gold}}</text>
+            <!-- 共参与多少人 -->
+            <text class='text-goldinfo'>{{userno}}</text>
+            <!-- 按钮上的文字 -->
+            <view wx:if="isShowA" class='view-topay' wx:if="{{showInvite}}"  bindtap="allAction" >
+                <text>{{bttext}}</text>
+                <!-- <text>瓜分倒计时</text> -->
+                <!-- 倒计时 class='text-goldinfot'-->
+                <text wx:if="{{showTimeText}}">{{time}}</text>
+            </view>
+            <view wx:if="isShowA" class='view-topay2' wx:if="{{!showInvite}}" bindtap="allAction">
+                <text>{{bttext}}</text>
+                <!-- <text>瓜分倒计时</text> -->
+                <!-- 倒计时 class='text-goldinfot'-->
+                <text wx:if="{{showTimeText}}">{{time}}</text>
+            </view>
+            <!-- 已邀请**人，奖金+*% -->
+            <text class='text-goldinfos' wx:if="{{showGold}}">{{goldx}}</text>
+            <view class="invitation-person"  wx:if="{{showGold}}">
+                <block wx:for="{{invitataionArr}}" wx:key="index">
+                    <view class="person_bg" data-index="{{index}}" bindtap="allAction">
+                        <image class="person_head" src="{{item.head_img}}"/>
+                    </view>
+                </block>
+            </view>
+        </view>
+
+
+        <view class='view-alltext'>
+            <text class='text-goldinfoh'>玩法说明：</text>
+            <text class='text-goldinfoh'>1、邀请一个用户奖励增加20%。</text>
+            <text class='text-goldinfoh'>2、玩家报名成功后，奖池自动增加1元话费。</text>
+            <text class='text-goldinfoh'>3、玩家可在每天早晨7:00~8:30准时签到。</text>
+            <text class='text-goldinfoh'>4、签到得0.1元~100元话费，邀请好友奖金翻倍。</text>
+        </view>
+        <view class='view-userl'>
+            <view class='view-fort'>
+                <text class='td-text'>上期瓜分榜：</text>
+            </view>
+            <view class='view-getgiftuser'>
+                <view class='userinfo-view'>
+                    <image src='{{userList[0].head_img}}' class='user-image'></image>
+                    <text class='username-text'>{{userList[0].user_name}}</text>
+                    <text class='usercoin-text'>{{userList[0].ycoin}}</text>
+                </view>
+                <view class='userinfo-view'>
+                    <image src='{{userList[1].head_img}}' class='user-image'></image>
+                    <text class='username-text'>{{userList[1].user_name}}</text>
+                    <text class='usercoin-text'>{{userList[1].ycoin}}</text>
+                </view>
+                <view class='userinfo-view'>
+                    <image src='{{userList[2].head_img}}' class='user-image'></image>
+                    <text class='username-text'>{{userList[2].user_name}}</text>
+                    <text class='usercoin-text'>{{userList[2].ycoin}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="concernus-view" wx:if="{{getGold}}">
+        <view class='view-getgoldbg'>
+            <text class="text-dialogtitle">{{getCoinTitle}}</text>
+            <text class="text-dialogc">{{getCoinNo}}</text>
+            <button class="bt-sharef" open-type="share" data-index="-222"> 和好友炫耀一下 </button>
+        </view>
+    </view>
+
+    <view class="concernus-view" wx:if="{{shareToF}}" bindtap="closeDialog">
+        <view class='view-sharetofbg'>
+            <text class="text-dialogtitle">提示</text>
+            <text class="text-dialogc">邀请群好友一起参加签到，奖金可翻倍。</text>
+            <button class="bt-sharef" open-type="share" data-index="-111"> 去邀请 </button>
+        </view>
+    </view>
+    <view class="concernus-view" wx:if="{{isNeedDialog}}">
+        <view class='view-sharetofbg'>
+            <text class="text-dialogtitle">真是遗憾</text>
+            <text class="text-dialogc">您来晚啦，上期瓜分已结束</text>
+            <view class='viewDialogline'></view>
+            <button class="bt-sharef" catchtap="closeDialogAndSetType"> 知道了</button>
+        </view>
+    </view>
+
+    <view class="concernus-view" wx:if="{{isGoldOver}}" bindtap="closeDialog">
+        <view class='view-sharetofbg'>
+            <text class="text-dialogtitle">真是遗憾</text>
+            <text class="text-dialogc">奖池被瓜分完啦，下次早些来签到哦！</text>
+            <view class='viewDialogline'></view>
+            <button class="bt-sharef" bindtap="closeDialog"> 知道了</button>
+        </view>
+    </view>
+    <!-- <view class="concernus-view" wx:if="{{isTryPlayGame}}" bindtap="closeDialog">
+        <view class='view-sharetofbg'>
+            <text class="text-dialogtitle">抱歉</text>
+            <text class="text-dialogc">暂时没有试玩游戏，请联系客服</text>
+            <view class='viewDialogline'></view>
+            <button class="bt-sharef" bindtap="closeDialog"> 知道了</button>
+        </view>
+    </view> -->
+
+    <cover-view class="concernus-view" wx:if="{{isPayOk}}" bindtap="concernOver">
+        <cover-image class="image-hand" src="../../image/an-hand.gif"></cover-image>
+        <cover-view class="view-concerinfo">
+            <cover-image class="image-concerimg" src="../../image/image-dialogbg.png"></cover-image>
+        </cover-view>
+    </cover-view>
+    <!-- 试玩弹窗 -->
+    <signTip wx:if="{{isShowAlert}}" bindgoPlayGame="goPlayGame" bindcloseTryGameAlert='closeTryGameAlert' />
+    <!-- 红包动画 -->
+    <view class="dh-footer" wx:if="{{isRedActive}}" bindtap="getOpenRedBag">
+        <image src="../../image/bag_notice.gif"></image>
+    </view>
+    <!-- 底部 -->
+    <view class="footerContainer">
+        <block wx:for="{{tabList}}" wx:key="index">
+            <view class="tabList" bindtap="clickTab" wx:if="{{item.active_tab == 0}}" data-index="{{index}}">
+                <image class="select" src="{{item.tab_off_img}}"></image>
+                <view class="tabText_off">{{item.tab_name}}</view>
+            </view>
+            <view class="tabList" bindtap="clickTab" wx:if="{{item.active_tab == 1}}" data-index="{{index}}">
+                <image src="{{item.tab_on_img}}"></image>
+                <view class="tabText_on">{{item.tab_name}}</view>
+            </view>
+        </block>
+    </view>
+    <!-- 手指动画 -->
+    <view class="topFingerContainer">
+        <view class="fingerActive" wx:if="{{isShowFinger}}" bindtap='clickFingerAlert'>
+            <image src="../../image/an-hand1.gif"></image>
+        </view>
+        <view class="fingerContainer" wx:if="{{isShowFingerAlert}}" bindtap="isCloseAlert">
+            <view class="fingerContent">
+                <image src="../../image/image-dialogbg.png"></image>
+            </view>
+        </view>
+    </view>
+
+</scroll-view>

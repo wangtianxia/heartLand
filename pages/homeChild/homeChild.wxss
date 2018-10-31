@@ -1,0 +1,111 @@
+/* pages/homeChild/homeChild.wxss */
+.homeChildPage{
+  width:100%;
+  text-align:center;
+  margin:0 auto;
+}
+.homeChildContainer{
+    width:80%;
+    margin:0 auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.tab_off_content{
+    width:calc(100% / 2);
+    color:rgba(0,0,0.3);
+    text-align:center;
+}
+.tab_off{
+  margin-left:60rpx;
+  text-align: center;
+  font-size:30rpx;
+  width:120rpx;
+  line-height:48rpx;
+  color:#272727;
+  display:block;
+}
+
+.tab_on_content{
+    width:calc(100% / 2);
+    color:#ff5534;
+    text-align:center;
+}
+.tab_on{
+  margin-left:60rpx;
+  text-align: center;
+  width:120rpx;
+  font-size:30rpx;
+  line-height:48rpx;
+  color:#ff5534;
+  display:block;
+  border-bottom:2rpx solid#ff5534;
+}
+
+/* 游戏子列表 */
+.homeChildContent{
+   /* margin-left:45rpx; */
+   margin-right:55rpx;
+   width:100%;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.home-list{
+  height:161rpx;
+  width:660rpx;
+  display:flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  
+}
+.list-content-left{
+
+   height:161rpx;
+   display:flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   padding-top:30rpx;
+}
+.list-content-right{
+    height:161rpx;
+}
+.game-logo{
+  width:100rpx;
+  height:100rpx;
+  border-radius:25rpx;
+}
+.game-info{
+   margin-left:29rpx;
+   height:100rpx;
+
+}
+.game-name{
+  font-size:32rpx;
+  line-height:46rpx;
+  color:#272727;
+}
+.game-title{
+  font-size:26rpx;
+  line-height:46rpx;
+  color:#989898;
+  width:350rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display:inline-block;
+}
+.game-btn{
+  width:150rpx;
+  height:50rpx;
+  border:1rpx solid #ff5534;
+  font-size:26rpx;
+  line-height:48rpx;
+  border-radius:25rpx;
+  margin-top:55rpx;
+  text-align:center;
+  color:#ff5534;
+}
+

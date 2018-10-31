@@ -1,0 +1,105 @@
+<!--pages/grab/index.wxml-->
+<scroll-view scroll-y wx:if="{{ismarket}}">
+    <view class='view-market'>
+        <view class='hotItem-view'>
+            <image class='market-topimg' src="{{hotItem.icon_url}}" bindtap='toItemInfo' data-index="{{hotItem.item_id}}"></image>
+            <view class='hot-view'>
+                <view class='hotinfo-view'>
+                    <text class='hotItemname-text'>{{hotItem.item_name}}</text>
+                    <view class='itempriceinfo-view'>
+                        <view class='hotitemprice-view'>
+                            <text class='curr_price-text' wx:if='{{hotItem.invite_num!=null}}'>现价￥{{hotItem.curr_price_y}}</text>
+                            <text class='curr_price-text' wx:else>原价￥{{hotItem.curr_price_y}}</text>
+                            <view class='shareandpay-view'>
+                                <text class='invitenum-text' wx:if='{{hotItem.invite_num!=null}}'>已减{{hotItem.price_y-hotItem.curr_price_y}}元</text>
+                                <view wx:else>
+                                    <text class='inviteno-text'>每邀请一名好友减</text>
+                                    <text class='itemtext'>{{hotItem.share_reduce/100 || 0}}</text>
+                                    <text class='inviten-text'>元</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='itemnum-view'>
+                    <view wx:if='{{hotItem.item_num!=0}}'>
+                        <text class='itemnum-text'>剩余件</text>
+                        <text class='item_num-text'>{{hotItem.item_num}}</text>
+                        <text class='itemnum-text'>件</text>
+                    </view>
+                    <text class='itemnum-text' wx:else>商品售磬</text>
+                </view>
+            </view>
+            <button class='shareget-button' open-type="share" data-index='{{hotItem.item_id}}'>找人帮忙0元得</button>
+        </view>
+        <view class='market-view'>
+            <block wx:for="{{marketItem}}" wx:for-item="item" wx:key='index'>
+                <view class='marketItem-view'>
+                    <image class='market-itemimg' src="{{marketItem[index].icon_url}}" bindtap='toItemInfo' data-index="{{marketItem[index].item_id}}"></image>
+                    <text class='marketItemname-text'>{{marketItem[index].item_name}}</text>
+
+                    <view class='marketitempriceinfo-view'>
+                        <view class='itemprice-view'>
+                            <view class='itemp-view'>
+                                <text class='price-text' wx:if='{{marketItem[index].invite_num!=null}}'>现价￥{{marketItem[index].curr_price_y}}</text>
+                                <text class='price-text' wx:else>原价￥{{marketItem[index].curr_price_y}}</text>
+                                <view class='itemn-view' wx:if='{{marketItem[index].item_num!=0}}'>
+                                    <text class='itemnum-text'>剩余</text>
+                                    <text class='itemtext'>{{marketItem[index].item_num}}</text>
+                                    <text class='itemnum-text'>件</text>
+                                </view>
+                                <text class='itemnum-text' wx:else>商品售磬</text>
+                            </view>
+                            <view class='shareand-view'>
+                                <text class='invitenum-text' wx:if='{{marketItem[index].invite_num!=null}}'>已减{{marketItem[index].price_y-marketItem[index].curr_price_y}}元</text>
+                                <view wx:else>
+                                    <text class='inviteno-text'>每邀请一名好友减</text>
+                                    <text class='itemtext'>{{marketItem[index].share_reduce/100}}</text>
+                                    <text class='inviten-text'>元</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='shareandpay-view'>
+                        <view class='itempandsbutton-view'>
+                            <button class='sharegett-button' open-type="share" data-index='{{marketItem[index].item_id}}'>找人帮忙0元得</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class='toptitle-view' bindtap="playInfo">
+            <text class='wfsm-text'>玩法说明</text>
+            <image class='titleicon-image' src='../../image/icon-top.png'></image>
+        </view>
+        <modal hidden="{{palyInfoShow}}" title="玩法介绍" confirm-text="确定" no-cancel='false'  bindconfirm="playInfoCancel">
+            <text>1、每日中午12点整准时更新商品信息。</text>
+            <text>2、每个商品均是由京东自营提供，顺丰配送，保证原装正品。 </text>
+            <text>3、邀请好友抵现金（好友无需支付），每个商品减免价格均不同，最高免费拿。</text>
+            <text>4、邀请用户仅次日12点前有效，商品更新后会被归零，且在不同商品中不叠加，不复用。 </text>
+        </modal>
+
+        <modal hidden="{{palyDealShow}}" title="玩法介绍" confirm-text="已经了解并同意该规则" no-cancel='false' bindconfirm="playDealConfirm">
+            <text>1、每日中午12点整准时更新商品信息。</text>
+            <text>2、每个商品均是由京东自营提供，顺丰配送，保证原装正品。</text>
+            <text>3、邀请好友抵现金（好友无需支付），每个商品减免价格均不同，最高免费拿。</text>
+            <text>4、邀请用户仅次日12点前有效，商品更新后会被归零，且在不同商品中不叠加，不复用。</text>
+        </modal>
+
+
+        <modal hidden="{{addInfo}}" title="收货信息" confirm-text="确认无误" no-cancel='false' bindcancel="addInfoCancel" bindconfirm="addInfoConfirm">
+            <input class='addinput' type='text' placeholder="收货人：" bindinput='nameinput' bindblur='getname'></input>
+            <input class='addinput' type='text' placeholder='联系电话：' type='number' bindinput='phoneinput' bindblur='getphone' maxlength='11'></input>
+            <input class='addinput' type='text' placeholder='收货地址：' bindinput='addinput' bindblur='getadd'></input>
+        </modal>
+
+    </view>
+    <view class="concernus-view" wx:if="{{isFristShare}}" bindtap="closeDialog">
+        <view class='view-sharetof'>
+            <text class="text-dialogtitle">温馨提示</text>
+            <text class="text-dialogc">每邀请一名好友立减{{share_reduce/100}}元，最高可免费拿。</text>
+            <view class='viewDialogline'></view>
+            <button class="bt-sharefirst" open-type="share" data-index='{{item_id}}' bindtap="closeDialog"> 知道了</button>
+        </view>
+    </view>
+</scroll-view>

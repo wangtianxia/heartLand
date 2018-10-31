@@ -1,0 +1,15 @@
+<view class="concernus-view" wx:if="{{!hasUserInfo && canIUse}}">
+    <view class="view-getuserinfo">
+        <view class='view-getuserinfobg'>
+            <text class="text-getuserinfo">Hi,你好</text>
+            <!-- <button class="bt-getuserinfo" open-type="getUserInfo" bindgetuserinfo="getUserInfoBtn"> 进入应用 </button> -->
+            <form bindsubmit="submitInfo" report-submit='true'>
+                <button form-type="submit" class="bt-getuserinfo" open-type="getUserInfo" bindgetuserinfo="getUserInfoBtn">
+                     <!-- 此处我们可以定义一些即将要触发的事件的样式 -->
+                    进入应用
+                </button>
+            </form>
+        </view>
+        <image class='image-icon' src='../../image/icon.png'></image>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+<!--components/play3s/index.wxml-->
+<view class="tryToPlayAlert" bindtap="closeTryGameAlert" data-index="{{index}}">
+    <view class="tryToPlayContent">
+        <view class="tryPlayInfo">成功邀请一名新用户，参与瓜分奖池。</view>
+        <view class="tryContainer">
+            <form class='tryPlayBtn' bindsubmit="goPlayGame" report-submit='true'>
+                <button class='shareBtn' form-type="submit" type="default" open-type="share" size="mini" data-index="-555">去邀请</button>
+            </form>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,299 @@
+/* pages/me/index.wxss */
+page{
+    width:100%;
+    height:100%;
+}
+.view-myinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 750rpx;
+    background: white;
+}
+
+.userinfo-avatar {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    color: black;
+    font-size: 30rpx;
+    margin-top: 25rpx;
+}
+
+.userinfo-userid {
+    color: black;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    margin-bottom: 50rpx;
+}
+
+.view-gray {
+    background: rgb(246, 246, 246);
+    height: 8rpx;
+    width: 750rpx;
+}
+
+.view-getm {
+    background: white;
+    height: 100rpx;
+    width: 750rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+/* 试玩领红包 start */
+.view-try-getm {
+    background: white;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    /* flex-direction: row; */
+}
+
+.try-name {
+    color: black;
+    font-size: 30rpx;
+}
+
+/* 试玩领红包 end */
+.text-nowm {
+    color: black;
+    font-size: 30rpx;
+    margin-left: 30rpx;
+}
+
+.text-mno {
+    color: black;
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-left: 27rpx;
+}
+
+.text-y {
+    color: black;
+    font-size: 30rpx;
+    margin-left: 8rpx;
+}
+
+.playedgames {
+    color: rgb(170, 170, 170);
+    font-size: 30rpx;
+    margin-left: 49rpx;
+    margin-top: 30rpx;
+    margin-right: 550rpx;
+}
+
+.text-last {
+    color: black;
+    font-size: 26rpx;
+    display: flex;
+    width: 750rpx;
+    height: 98rpx;
+    background: white;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.bt-gogame {
+    display: flex;
+    align-content: center;
+    background: white;
+    font-size: 26rpx;
+    width: 150rpx;
+    height: 50rpx;
+    border-radius: 50rpx;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    color: rgb(255, 85, 52);
+    margin-right: 50rpx;
+    float: right;
+    border: solid rgb(255, 85, 52) 1rpx;
+}
+
+.img-arrow {
+    width: 13rpx;
+    height: 21rpx;
+    margin-right: 49rpx;
+}
+
+.view-gamelist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 49rpx;
+    margin-bottom: 49rpx;
+    width: 660rpx;
+    text-align:center;
+    margin-left:30rpx;
+}
+
+.game-image {
+    display: flex;
+    width: 122rpx;
+    height: 122rpx;
+    border-radius: 14rpx;
+    margin-left: 41rpx;
+    margin-bottom: 30rpx;
+}
+
+.concernus-view {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(1, 30, 46, 0.8);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.image-hand {
+    width: 81rpx;
+    height: 114rpx;
+    position: absolute;
+    left: 600rpx;
+    top: 10rpx;
+    z-index: 50;
+}
+
+.view-concerinfo {
+    width: 631rpx;
+    height: 842rpx;
+    align-content: center;
+}
+
+.image-concerimage {
+    width: 630rpx;
+    height: 780rpx;
+    align-content: center;
+}
+
+.text-red {
+    color: rgb(255, 85, 52);
+    font-size: 26rpx;
+    line-height: 46rpx;
+}
+
+.text-open {
+    color: rgb(229, 229, 229);
+    margin-right: 49rpx;
+    margin-left: 10rpx;
+    font-size: 26rpx;
+    line-height: 46rpx;
+}
+.try-open{
+    color: rgb(229, 229, 229);
+    margin-right: 49rpx;
+    margin-left: 10rpx;
+    font-size: 26rpx;
+    line-height: 46rpx;
+}
+
+.formBox {
+    width:100%;
+    height:100rpx;
+}
+.formBox button{
+    width:100%;
+    height:100rpx;
+    background:#fff;
+    border:none;
+    display:block;
+}
+button::after{
+  border: none;
+}
+
+.copyContainer{
+    /* width:100%; */
+    position:fixed;
+    bottom:130rpx;
+    left:75rpx;
+}
+.copyContent{
+    width:600rpx;
+    height:120rpx;
+    background-color:rgba(255,255,255,.9);
+    border:1rpx solid #ebebeb;
+    border-radius:20rpx;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+.customerService{
+    width:80rpx;
+    height:80rpx;
+    border-radius:50%;
+    margin-top:20rpx;
+}
+.customerName{
+    font-size:30rpx;
+    line-height:46rpx;
+    color:#000;
+    margin-top:20rpx;
+    margin-left:20rpx;
+}
+.customerDesc{
+    font-size:24rpx;
+    line-height:46rpx;
+    color:#000;
+    margin-left:20rpx;
+}
+
+/* 底部按钮 */
+.footerContainer{
+    width:100%;
+    background:#fff;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:110rpx;
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.tabList{
+    width:25%;
+    height:100%;
+    padding:10rpx 10rpx 0;
+    text-align:center;
+}
+.tabList image{
+    width:40rpx;
+    height:40rpx;
+}
+ .tabText_off{
+    font-size:28rpx;
+    color:#000;
+    line-height:30rpx;
+    padding-bottom:5rpx;
+}
+.tabText_on{
+    color:#ff5534;
+    font-size:28rpx;
+    line-height:30rpx;
+    padding-bottom:5rpx;
+}
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+
+

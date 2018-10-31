@@ -1,0 +1,40 @@
+/* pages/tenSecond/index.wxss */
+/* 底部按钮 */
+.footerContainer{
+    width:100%;
+    background:#fff;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:110rpx;
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 100
+}
+
+.tabList{
+    width:25%;
+    height:100%;
+    padding:10rpx 10rpx 0;
+    text-align:center;
+}
+.tabList image{
+    width:40rpx;
+    height:40rpx;
+}
+ .tabText_off{
+    font-size:28rpx;
+    color:#000;
+    line-height:30rpx;
+    padding-bottom:5rpx;
+}
+.tabText_on{
+    color:#ff5534;
+    font-size:28rpx;
+    line-height:30rpx;
+    padding-bottom:5rpx;
+}
+.tenScond{
+    
+}

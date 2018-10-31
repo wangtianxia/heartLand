@@ -1,0 +1,37 @@
+<!--pages/homeChild/homeChild.wxml-->
+<view class="homeChildPage">
+  <!-- <scroll-view class="scroll-view_H" scroll-x style="width: 100%"> -->
+    <view class="homeChildContainer">
+      <block wx:for="{{tabList}}" wx:key="index">
+      <view class="tab_off_content" bindtap="onChangeTab" wx:if="{{item.active_tab == 0}}" data-index="{{index}}">
+          <text class="tab_off">{{item.type_name}}</text>
+        </view>
+        <view class="tab_on_content" wx:if="{{item.active_tab == 1}}" bindtap="onChangeTab" data-index="{{index}}">
+          <text class="tab_on">{{item.type_name}}</text>
+        </view>
+      </block>
+    </view>
+  <!-- </scroll-view> -->
+</view>
+<view class="homeChildContent">
+  <block wx:for="{{gameListArr}}" wx:key="{{gameListArr}}">
+    <view class="home-list">
+      <view class="list-content-left">
+        <image class="game-logo" src="{{item.logo_url}}"></image>
+        <view class="game-info">
+          <view class="game-name">{{item.game_name}}</view>
+          <text class="game-title">{{item.game_explain}}</text>
+        </view>
+      </view>
+      <view class="list-content-right">
+        <view class="game-btn" bindtap="toPlayGame" data-index="{{index}}">
+          <text>进入游戏</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 上拉 -->
+  <view style="font-size:30rpx;color:#666;line-height:28rpx;text-align:center;margin:20rpx;" wx:if="{{isShowNomore}}">
+        没有更多了
+    </view>
+</view>

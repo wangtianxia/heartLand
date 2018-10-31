@@ -1,0 +1,110 @@
+.item-view
+{
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 40rpx
+}
+.item-image
+{
+  width: 315rpx;
+  height: 210rpx;
+  margin-right: 30rpx;
+}
+.itemimageandinfo-view
+{
+  display: flex;
+  flex-direction: row;
+}
+.itemnameandrp-view
+{
+  display: flex;
+  flex-direction: column;
+}
+.curr_price-text
+{
+  font-size: 32rpx;
+  color:rgb(255,85,52);
+}
+.price-text
+{
+  font-size: 24rpx;
+   color:rgba(39, 39, 39, 0.5);
+  text-decoration: line-through;
+  margin-left: 19rpx;
+}
+.itemprice-view
+{
+  margin-top: 42rpx
+}
+.gameinfoabt-view
+{
+  width: 670rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin-top: 20rpx;
+  align-items:center;
+}
+.itempandsbutton-view
+{
+  display: flex;
+  flex-direction: row;
+  width: 380rpx;
+  align-items:center;
+ 
+  justify-content:center;
+  align-content:center;
+}
+
+.payitem-button
+{
+  width: 150rpx;
+  height: 47rpx;
+  font-size: 22rpx;
+  color: rgb(152,152,152);
+  display: flex;
+  align-items:center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.shareget-button
+{
+  width: 150rpx;
+  height: 47rpx;
+  font-size: 22rpx;
+  color: white;
+  margin-left: 20rpx;
+  background: rgb(255,85,52);
+  display: flex;
+  align-items:center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+.text-emsinfo
+{
+  font-size: 26rpx;
+}
+.text-name
+{
+  font-size: 26rpx;
+}
+.text-itemnum
+{
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: rgbargb(39,39,39,0.7);
+  height: 30rpx;
+}
+.addinput
+{
+ 
+  height: 90rpx;
+  padding-left: 26rpx;
+  border:1px solid #272727;
+  margin: 30rpx;
+  border-radius: 16rpx;
+}

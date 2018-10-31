@@ -1,0 +1,48 @@
+<scroll-view scroll-y>
+    <block wx:for="{{itemlist}}" wx:key="index">
+
+        <view class='item-view' wx:if='{{itemlist[index].item_name!=null}}'>
+            <view class='item-pi'>
+                <view class='itemimageandinfo-view'>
+                    <image src="{{itemlist[index].icon_url}}" bindtap="toItemInfo" data-index='{{index}}' mode="aspectFill" class="item-image"></image>
+                    <view class='itemnameandrp-view'>
+                        <text class="text-name">{{itemlist[index].item_name}}</text>
+                        <text class="text-itemnum" wx:if='{{itemlist[index].chg_time==0}}'>剩余{{itemlist[index].item_num}}件</text>
+                        <view class='itemprice-view'>
+                            <text class='curr_price-text'>￥{{itemlist[index].curr_price_y}}</text>
+                            <text class='price-text' wx:if='{{itemlist[index].invite_num!=null}}'>￥{{itemlist[index].price_y}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='gameinfoabt-view'>
+                    <view class='game-info'>
+                        <text class="text-emsinfo" wx:if='{{itemlist[index].chg_time==0}}'>已经邀请{{itemlist[index].invite_num}}人</text>
+                        <text class="text-emsinfo" wx:elif='{{itemlist[index].express_time==0}}'>暂无运单信息</text>
+                        <text class="text-emsinfo" wx:else>{{itemlist[index].express_corp}} 单号：{{itemlist[index].express_code}}</text>
+                    </view>
+                    <view>
+                        <view class='mm-view' wx:if='{{itemlist[index].chg_time!=0}}'>
+                            <button class='payitem-button' bindtap="expressInfo" wx:if='{{itemlist[index].express_time!=0}}' data-index='{{index}}'>查看地址</button>
+                            <button class='payitem-button' bindtap="expressInfo" wx:elif="{{itemlist[index].express_name==''||itemlist[index].express_addr==''||itemlist[index].express_phone==0}}" data-index='{{index}}'>填写地址</button>
+                            <button class='payitem-button' bindtap="expressInfo" wx:else data-index='{{index}}'>修改地址</button>
+                        </view>
+                        <view class='itempandsbutton-view' wx:else>
+                            <button class='payitem-button' bindtap="toPayItem" data-index='{{itemlist[index].item_id}}'>直接购买</button>
+                            <button class='shareget-button' open-type="share" data-index='{{itemlist[index].item_id}}'>继续邀请</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <modal hidden="{{addInfo}}" title="收货信息" confirm-text="确认无误" no-cancel='false' bindcancel="addInfoCancel" bindconfirm="addInfoConfirm">
+        <input class='addinput' type='text' placeholder="收货人姓名：" bindinput='nameinput' bindblur='getname' value='{{exname}}'></input>
+        <input class='addinput' type='text' placeholder='收货人电话：' value='{{exphone}}' type='number' bindinput='phoneinput' bindblur='getphone' maxlength='11'></input>
+        <input class='addinput' type='text' placeholder='包含省、市、区的收货地址' value='{{exaddr}}' bindinput='addinput' bindblur='getadd'></input>
+    </modal>
+    <modal hidden="{{myAddr}}" title="收货信息" confirm-text="关闭" no-cancel='false' bindcancel="addInfoCancel" bindconfirm="addInfoCancel">
+        <view class='addinput'>{{exname}}</view>
+        <view class='addinput'>{{exphone}}</view>
+        <view class='addinput'>{{exaddr}}</view>
+    </modal>
+</scroll-view>

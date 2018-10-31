@@ -1,0 +1,11 @@
+<!--components/play3s/index.wxml-->
+<view class="tryToPlayAlert" bindtap="closeTryGameAlert" data-index="{{index}}">
+    <view class="tryToPlayContent">
+        <view class="tryPlayInfo">游戏三分钟，惊喜大奖随手拿。</view>
+        <view class="tryContainer" bindtap="goPlayGame">
+            <view class="tryPlayBtn">
+                <view>马上游戏</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,65 @@
+<view class="container">
+    <scroll-view scroll-y>
+        <image class='item-icon' src="{{iteminfo.icon_url}}"></image>
+        <view class='iteminfo-view'>
+            <view class='itemg-view'>
+                <text class='itemname-text'>{{iteminfo.item_name}}</text>
+                <view class='itemgright-view'>
+                    <text class='needpay-text'>剩余 </text>
+                    <text class='invite_num-text'>{{iteminfo.item_num}}</text>
+                    <text class='needpay-text'> 件</text>
+                </view>
+            </view>
+
+            <view class='view-gray'></view>
+            <view class='tdgfiteminfo-view' wx:if='{{iteminfo.freetimes}}'>
+                <text class='needpay-text'>今日已有 </text>
+                <text class='invite_num-text'> {{iteminfo.item_num}} </text>
+                <text class='needpay-text'> 件商品被免费拿走</text>
+            </view>
+        </view>
+        <view class='itemimg-view'>
+            <view class='spxq-view'>
+                <view class='viewline'></view>
+                <text class='spxq-text'>商品详情</text>
+                <view class='viewline'></view>
+            </view>
+            <block wx:for="{{iteminfo.image_arr}}" wx:for-item="item" wx:key='index'>
+                <image class='item-image' src="{{iteminfo.image_arr[index]}}"></image>
+            </block>
+        </view>
+
+    </scroll-view>
+    <view class='bottom-view'>
+        <view class='bottomtwo-view' wx:if='{{iteminfo.invite_num!=null}}'>
+            <text class='noinvitenum-text'>已减{{iteminfo.price_y-iteminfo.curr_price_y}}元</text>
+        </view>
+        <view class='bottomone-view'>
+            <view>
+                <view class='itemgleft-view'>
+
+                    <text class='price-text' wx:if='{{iteminfo.invite_num!=null}}'>现价￥{{iteminfo.curr_price_y}}</text>
+                    <text class='price-text' wx:else>原价￥{{iteminfo.curr_price_y}}</text>
+                </view>
+            </view>
+            <view class='button-view'>
+                <button class='payitem-button' bindtap="toPayItem">直接购买</button>
+                <button class='shareget-button' open-type="share">找人帮忙0元得</button>
+            </view>
+        </view>
+    </view>
+
+    <modal hidden="{{addInfo}}" title="收货信息" confirm-text="确认无误" no-cancel='false' bindcancel="addInfoCancel" bindconfirm="addInfoConfirm">
+        <input class='addinput' type='text' placeholder="收货人：" bindinput='nameinput' bindblur='getname'></input>
+        <input class='addinput' type='text' placeholder='联系电话：' type='number' bindinput='phoneinput' bindblur='getphone' maxlength='11'></input>
+        <input class='addinput' type='text' placeholder='收货地址：' bindinput='addinput' bindblur='getadd'></input>
+    </modal>
+    <view class="concernus-view" wx:if="{{isFristShare}}" bindtap="closeDialog">
+        <view class='view-sharetof'>
+            <text class="text-dialogtitle">温馨提示</text>
+            <text class="text-dialogc">每邀请一名好友立减{{share_reduce/100}}元，最高可免费拿。</text>
+            <view class='viewDialogline'></view>
+            <button class="bt-sharefirst" open-type="share" data-index='{{item_id}}' bindtap="closeDialog"> 知道了</button>
+        </view>
+    </view>
+</view>

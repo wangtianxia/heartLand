@@ -1,0 +1,5 @@
+{
+      "usingComponents": {
+            "play3s":"/components/play3s/index"
+      }
+}

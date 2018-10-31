@@ -1,0 +1,458 @@
+/* pages/sign/index.wxss */
+
+page {
+    background: rgb(247, 247, 247);
+}
+
+/* 手指指引显示 */
+
+topFingerContainer {
+    position: relative;
+    width: 100%;
+}
+
+.fingerActive {
+    /* width:100%; */
+    position: absolute;
+    top: 10rpx;
+    right: 80rpx;
+}
+
+.fingerActive image {
+    width: 130rpx;
+    height: 170rpx;
+}
+
+.fingerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fingerContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fingerContent image {
+    width: 630rpx;
+    height: 718rpx;
+}
+
+.view-gift {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.view-giftinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20rpx;
+    height: 570rpx;
+    width: 660rpx;
+    background: rgb(255, 85, 52);
+    border-radius: 20rpx;
+}
+
+.view-fort {
+    width: 750rpx;
+    margin-top: 19rpx;
+}
+
+.text-yes {
+    font-size: 36rpx;
+    color: white;
+    top: 59rpx;
+    left: 89rpx;
+    display: flex;
+    position: absolute;
+}
+
+.text-gold {
+    font-size: 60rpx;
+    color: white;
+    margin-top: 90rpx;
+}
+
+.text-goldinfo {
+    font-size: 26rpx;
+    color: #fff;
+    margin-top: 19rpx;
+    margin-bottom: 42rpx;
+}
+
+.text-goldinfos {
+    font-size: 26rpx;
+    color: #fff;
+    height: 30rpx;
+    margin-top: 50rpx;
+}
+
+.text-goldinfot {
+    font-size: 26rpx;
+    color: white;
+    margin-top: 38rpx;
+}
+
+.text-goldinfotitle {
+    font-size: 26rpx;
+    color: black;
+    margin-top: 18rpx;
+    font-weight: bolder;
+}
+
+.text-goldinfoh {
+    font-size: 26rpx;
+    color: black;
+    margin-top: 8rpx;
+}
+
+.view-topay {
+    color:#fff;
+    height: 80rpx;
+    border-radius: 40rpx;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 36rpx;
+    font-weight: bolder;
+    width: 540rpx;
+    line-height:48rpx;
+    letter-spacing: 3px;
+    display: flex;
+    border: 1px solid #fff;
+}
+.view-topay2 {
+    color:#fff;
+    height: 80rpx;
+    border-radius: 40rpx;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 36rpx;
+    font-weight: bolder;
+    width: 540rpx;
+    line-height:48rpx;
+    letter-spacing: 3px;
+    display: flex;
+    border: 1px solid #fff;
+    margin-top:100rpx;
+}
+
+.view-alltext {
+    display: flex;
+    flex-direction: column;
+    margin-top: 39rpx;
+    height: 190rpx;
+}
+
+.view-userl {
+    background: white;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 20rpx;
+    width: 660rpx;
+    height: 360rpx;
+    display: flex;
+    margin-top: 50rpx;
+    flex-direction: column;
+    margin-bottom: 120rpx;
+}
+
+.userinfo-view {
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 320rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.td-text {
+    font-size: 32rpx;
+    color: black;
+    margin-left: 100rpx;
+    display: flex;
+}
+
+.username-text {
+    font-size: 32rpx;
+    color: black;
+    margin-top: 24rpx;
+}
+
+.usercoin-text {
+    font-size: 32rpx;
+    color: rgb(255, 85, 52);
+    margin-top: 10rpx;
+}
+
+.user-image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 60rpx;
+}
+
+.concernus-view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(1, 30, 46, 0.8);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.view-getuserinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: rgba(1, 30, 46, 0);
+    position: absolute;
+    z-index: 20;
+    width: 516rpx;
+    height: 420rpx;
+}
+
+.view-getuserinfobg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: white;
+    margin-top: 45rpx;
+    width: 516rpx;
+    height: 338rpx;
+    border-radius: 20rpx;
+}
+
+.text-getuserinfo {
+    font-size: 32rpx;
+    margin-top: 130rpx;
+}
+
+.bt-getuserinfo {
+    background: rgb(255, 85, 52);
+    color: white;
+    margin-top: 20rpx;
+    width: 400rpx;
+}
+
+.image-icon {
+    position: absolute;
+    z-index: 20;
+    width: 162rpx;
+    height: 162rpx;
+    border-radius: 81rpx;
+    top: 0;
+}
+
+.view-getgoldbg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: white;
+    min-width: 480rpx;
+    max-width: unset;
+    height: 298rpx;
+    border-radius: 20rpx;
+    padding: 40rpx;
+    animation: showBig 0.2s ease;
+}
+
+@keyframes showBig {
+    from {
+        transform: scale(0.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.view-getgiftuser {
+    background: white;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 530rpx;
+    display: flex;
+    margin-top: 20rpx;
+    flex-direction: row;
+}
+
+.view-sharetofbg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: white;
+    width: 560rpx;
+    padding-top: 20rpx;
+    border-radius: 20rpx;
+}
+
+.view-sharetof {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: white;
+    margin-top: 45rpx;
+    width: 640rpx;
+    height: 310rpx;
+    border-radius: 20rpx;
+}
+
+.text-dialogtitle {
+    font-size: 32rpx;
+    color: black;
+    font-weight: bold;
+}
+
+.text-dialogc {
+    font-size: 30rpx;
+    color: black;
+    margin: 40rpx 0;
+}
+
+button::after {
+    border: none;
+}
+
+.bt-sharef {
+    border: none;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 20rpx 20rpx;
+    position: relative;
+    color: #999;
+}
+
+.bt-sharef::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.image-hand {
+    width: 81rpx;
+    height: 114rpx;
+    position: absolute;
+    left: 600rpx;
+    top: 10rpx;
+    z-index: 50;
+}
+
+.view-concerinfo {
+    width: 631rpx;
+    height: 842rpx;
+    align-content: center;
+}
+
+.image-concerimg {
+    width: 630rpx;
+    height: 717rpx;
+    align-content: center;
+}
+
+.dh-footer {
+    position: fixed;
+    bottom: 50rpx;
+    right: 0rpx;
+    z-index: 999;
+}
+
+.dh-footer image {
+    width: 250rpx;
+    height: 150rpx;
+}
+
+.footerContainer {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 110rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.tabList {
+    width: 25%;
+    height: 100%;
+    padding: 10rpx 10rpx 0;
+    text-align: center;
+}
+
+.tabList image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.tabText_off {
+    font-size: 28rpx;
+    color: #000;
+    line-height: 30rpx;
+    padding-bottom: 5rpx;
+}
+
+.tabText_on {
+    color: #ff5534;
+    font-size: 28rpx;
+    line-height: 30rpx;
+    padding-bottom: 5rpx;
+}
+
+/* 被邀请的好友的头像 */
+.invitation-person{
+    margin-top:30rpx;
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left:30rpx;
+}
+.person_bg{
+    width:80rpx;
+    height:80rpx;
+    border-radius:50%;
+    margin-right:30rpx;
+}
+.person_head{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+}

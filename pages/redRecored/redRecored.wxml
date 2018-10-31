@@ -1,0 +1,53 @@
+<!--pages/redRecored/redRecored.wxml-->
+<view class="redBagBigContainer">
+    <view class="redBagInfoRe">领红包记录</view>
+</view>
+<view>
+    <view class="redRcoredContainer">
+        <view class="redRoredConent">
+            <block wx:for="{{redRoredList}}" wx:key="index">
+                    <view class="redRcorelistInfo" data-index="index"  wx:if="{{item.doub == 0}}">
+                        <image class="" src="../../image/redbag_small.png" ></image>
+                        <text class="item-palyGameName">{{item.game_name}}</text>
+                        <text class="item-moneyNum">+{{ item.reward_num / 100}}元</text>
+                    </view>
+                    <view class="redRcorelistInfo" data-index="index"  wx:if="{{item.doub == 1}}">
+                        <image src="../../image/doub.png" class="doub_img"></image>
+                        <text class="item-palyGameName">{{item.game_name}}</text>
+                        <text class="item-moneyNum">+{{ item.reward_num  * 2 / 100}}元</text>
+                    </view>
+            </block>
+        </view>
+    </view>
+    <view class="redAlert" wx:if="{{isShowRedBag}}">
+        <view class="redContent" bindtap="openRedBag">
+            <view wx:if="{{!isShowOpenRedBag}}">
+                <image class="redBagIcon" src="../../image/redbag_big.png"></image>
+                <view class="redShowInfo">
+                    <view>
+                        <text style="letter-spacing:3rpx;">{{playName}}</text>
+                    </view>
+                    <view class="tryPlay" wx:if="{{isShowItem}}">
+                        <text>试玩红包</text>
+                    </view>
+                </view>
+            </view>
+            <image class="redBagGifIcon" wx:if="{{isShowOpenRedBag}}" src="../../image/open_redbag.gif"></image>
+        </view>
+
+        <view class="redBagInfo" wx:if="{{isAnimationShow == 1}}">
+            <!-- <image class="closeAlert" src="../../image/activeClose.png" bindtap="closeShareAlert"></image> -->
+            <view class="redNumInfo">
+                <view class="redNumber">{{redNumber}}元</view>
+                <view class="getRewardBtn" bindtap="getReward">
+                    <text>领取奖励</text>
+                </view>
+                <button class="shareRewardBtn" data-name="shareBtn" plain="true" open-type='share' data-index="-333">
+                    <text> 分享到群里炫耀一下</text>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 没有领取记录 -->
+<view class="fontRedBag" wx:if="{{fontRedBag}}">无红包领取记录</view>

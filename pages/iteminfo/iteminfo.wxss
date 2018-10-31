@@ -1,0 +1,259 @@
+.item-icon
+{
+  width: 690rpx;
+  height: 460rpx;
+  margin-left: 30rpx;
+}
+.item-image
+{
+  width: 750rpx;
+  height: 750rpx;
+}
+.curr_price-text
+{
+  font-size: 48rpx;
+  color:rgb(255,85,52);
+  margin-left: 12rpx;
+}
+.price-text
+{
+  font-size: 32rpx;
+  color:rgb(39,39,39);
+  margin-left: 30rpx
+}
+.itemg-view
+{
+width: 670rpx;
+display: flex;
+flex-direction: row;
+justify-content:space-between; 
+margin-left: 40rpx
+}
+.itemgright-view
+{
+margin-top: 15rpx;
+}
+.needpay-text
+{
+  font-size: 30rpx;
+  color: rgb(39,39,39);
+}
+.invite_num-text
+{
+  font-size: 48rpx;
+  font-weight: bold;
+  color:rgb(255,85,52);
+}
+.itemname-text
+{
+  
+  font-size: 32rpx;
+  color: rgb(39,39,39);
+  margin-top: 20rpx;
+  width: 420rpx;
+  font-weight: bolder
+}
+.view-gray
+{
+background: rgb(246, 246, 246);
+height: 8rpx;
+width: 750rpx;
+margin-top: 30rpx
+}
+.tdgfiteminfo-view
+{
+  width: 750rpx;
+  margin-top: 31rpx;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.bottom-view
+{
+  display: flex;
+   position: fixed;
+  z-index: 60;
+  width: 750rpx;
+  bottom: 0;
+  flex-direction: column;
+}
+.bottomone-view
+{
+  width: 750rpx;
+  background: white;
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+.invitenum-text
+{
+  font-size: 30rpx;
+  color: rgb(255,85,52);
+  margin-left: 32rpx;
+}
+.noinvitenum-text
+{
+  font-size: 28rpx;
+  color: rgb(255,85,52);
+  
+}
+.bottomtwo-view
+{
+  width: 750rpx;
+  background: rgba(255, 255, 255, 0.5);
+  height: 86rpx;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.itemimg-view
+{
+  width: 750rpx;
+  background: rgb(246, 246, 246);
+ 
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-top: 31rpx;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 110rpx
+}
+.spxq-text
+{
+  font-size: 24rpx;
+  color: rgba(50,50,50,0.6);
+  margin-left: 21rpx;
+  margin-right: 21rpx
+}
+.viewline
+{
+  background:rgba(39,39,39,0.23);
+  height: 2rpx;
+  width: 96rpx;
+  
+}
+.spxq-view
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30rpx;
+  
+}
+.payitem-button
+{
+  width: 180rpx;
+  height: 70rpx;
+  font-size: 24rpx;
+  color: rgba(39,39,39,0.5);
+  border:1px solid rgba(39,39,39,0.5);
+  font-weight: bold;
+  display: flex;
+  border-radius: 35rpx;
+  align-items:center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.shareget-button
+{
+  width: 260rpx;
+  height: 70rpx;
+  font-size: 24rpx;
+  color: white;
+  margin-left: 20rpx;
+  background: rgb(255,85,52);
+  font-weight: bold;
+  border-radius: 35rpx;
+  display: flex;
+  align-items:center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+.button-view
+{
+  display: flex;
+  flex-direction: row;
+  margin-right: 31rpx
+  
+}
+.addinput
+{
+ 
+  height: 90rpx;
+  padding-left: 26rpx;
+  border:1px solid #272727;
+  margin: 30rpx;
+  border-radius: 16rpx;
+}
+.concernus-view{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(1, 30, 46, 0.8);
+  flex-direction: column;
+  display: flex;
+ align-items: center;
+justify-content: center;
+align-content: center;
+}
+.view-sharetof
+{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  align-content: center;
+  justify-content: center;
+  background: white;
+  margin-top: 45rpx;
+  width: 640rpx;
+  height: 310rpx;
+  border-radius: 20rpx;
+}
+.bt-sharefirst
+{
+  background: white;
+  color: rgb(255,85,52);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  width: 200rpx;
+  font-size: 30rpx; 
+  height: 60rpx;
+}
+.text-dialogtitle
+{
+   font-size: 32rpx;
+color: black;
+font-weight:bold;
+margin-top: 40rpx
+}
+.text-dialogc
+{
+   font-size: 30rpx;
+color: black;
+margin-top: 40rpx
+}
+.viewDialogline
+{
+background: white;
+height: 1rpx;
+width: 516rpx;
+margin-top: 40rpx
+
+}

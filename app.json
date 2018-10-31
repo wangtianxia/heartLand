@@ -1,0 +1,23 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/withdraw/index",
+        "pages/iteminfo/iteminfo",
+        "pages/useritemlist/useritemlist",
+        "pages/home/index",
+        "pages/sign/index",
+        "pages/grab/index",
+        "pages/me/index",
+        "pages/redRecored/redRecored",
+        "pages/homeChild/homeChild",
+        "pages/shareComeIn/shareComeIn",
+        "pages/tenSecond/index",
+        "components/signTip/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "乐玩中心",
+        "navigationBarTextStyle": "black"
+    }
+}

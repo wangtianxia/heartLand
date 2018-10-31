@@ -1,0 +1,91 @@
+<!--pages/home/index.wxml-->
+
+<view class="home-container">
+    <!-- 三分钟试玩 -->
+    <view class="threePlay" wx:if="{{isShowThreeMinute}}">
+        <text>{{tempTime}}</text>
+    </view>
+    <swiper indicator-dots="{{dotsBoll}}" interval="{{interval}}" duration="{{duration}}" autoplay="{{autoplay}}" class="swiper-banner">
+        <block wx:for="{{bannerList}}" wx:key="index">
+            <swiper-item>
+                <image src="{{bannerList[index].banner_url}}" mode="aspectFill" class="banner-image" data-index="{{index}}" data-type="{{1}}" bindtap="onGameBtCall">
+                </image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <!--这是首页游戏列表  通过boolean变量ismain控制-->
+    <view>
+        <!-- 试玩开始 -->
+        <view class="try-banner-play" wx:if="{{ismain}}">
+            <view class="try-play-info">
+                <image class="black-block" src="../../image/t2.png"></image>
+                <text class="try-font-head">推荐</text>
+            </view>
+            <view class="game-content">
+                <block wx:for="{{tryPlayArr}}" wx:key="index">
+                    <view class="try-play-list" data-index="{{index}}" bindtap="showTryPlayAlert">
+                        <image class="try-img" src="{{item.logo_url}}"></image>
+                        <view class="try-title">{{item.game_name}}</view>
+                        <view class="try-content">{{item.game_explain}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="try-ads-content">
+                <ad unit-id="adunit-f8b074f2216877bb"></ad>
+            </view>
+        </view>
+    </view>
+    <!-- 试玩结束 推荐开始 -->
+    <view class="recommend-container">
+        <view class="try-recommend-info" bindtap="moreThen">
+            <view class="try-play-info">
+
+                <image class="black-block" src="../../image/t1.png"></image>
+                <text class="try-font-head">游戏排行</text>
+            </view>
+            <view class="right_morethen">
+                <form bindsubmit="submitInfo" report-submit='true'>
+                    <button form-type="submit" class="more-then-button">
+                        <!-- // 此处我们可以定义一些即将要触发的事件的样式 -->
+                        <text class="more-then">更多></text>
+                    </button>
+                </form>
+
+            </view>
+        </view>
+    </view>
+    <view class="recommed-list-info">
+        <block wx:for="{{recommendArr}}" wx:key="{{recommendArr}}">
+            <view class="recommend-play-list" data-index="{{index}}" bindtap="recommedTap">
+                <image class="recommend-img" src="{{item.logo_url}}"></image>
+                <view class="recommend-title">{{item.game_name}}</view>
+                <view class="recommend-content">{{item.game_explain}}</view>
+            </view>
+        </block>
+    </view>
+    <!-- <view class="ads-content">
+        <ad unit-id="adunit-0dd483039044fbc1"></ad>
+    </view> -->
+    <!-- 立即试玩弹窗 -->
+    <play3s wx:if="{{isShowAlert}}" bindgoPlayGame="goPlayGame" bindcloseTryGameAlert='closeTryGameAlert' />
+    <!-- 红包动画 -->
+    <view class="dh-footer" wx:if="{{isRedActive}}" bindtap="getOpenRedBag">
+        <image src="../../image/bag_notice.gif"></image>
+    </view>
+    <view style="font-size:30rpx;color:#666;line-height:28rpx;text-align:center;margin:20rpx;" wx:if="{{isShowNoMore}}">
+        我也是有底线的
+    </view>
+    <!-- 底部 -->
+    <view class="footerContainer">
+        <block wx:for="{{tabList}}" wx:key="index">
+            <view class="tabList" bindtap="clickTab" wx:if="{{item.active_tab == 0}}" data-index="{{index}}">
+                <image class="select" src="{{item.tab_off_img}}"></image>
+                <view class="tabText_off">{{item.tab_name}}</view>
+            </view>
+            <view class="tabList" bindtap="clickTab" wx:if="{{item.active_tab == 1}}" data-index="{{index}}">
+                <image src="{{item.tab_on_img}}"></image>
+                <view class="tabText_on">{{item.tab_name}}</view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,98 @@
+<!--pages/me/index.wxml-->
+<view class='view-myinfo' wx:if="{{isme}}">
+    <image class="userinfo-avatar" src="{{userInfo.head_img}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.user_name}}</text>
+    <text class="userinfo-userid">ID:{{user_id}}</text>
+    <view class='view-gray'></view>
+    <view class='view-getm'>
+        <view>
+            <text class='text-nowm'>当前余额</text>
+            <text class='text-mno'>{{userCoin}}</text>
+            <text class='text-y'>元</text>
+        </view>
+        <form bindsubmit="submitInfo" report-submit='true'>
+            <button form-type="submit" class="bt-gogame" bindtap="toGetm" >
+            提现 <!-- 此处我们可以定义一些即将要触发的事件的样式 -->
+            </button>
+         </form>
+        <!-- <button class="bt-gogame" ></button> -->
+    </view>
+    <view class='view-gray'></view>
+    <view class='view-getm'>
+        <view>
+            <text class='text-nowm'>在线客服</text>
+        </view>
+        <button class="bt-gogame" open-type='contact'>打开</button>
+    </view>
+    <view class='view-gray'></view>
+
+    <!--<view class='view-getm' bindtap="toRedBagItemList">
+        <text class='text-nowm'>我的试玩红包</text>
+        <text class="text-red"><text class="text-red">{{num}}</text>个未领红包<text class="text-open">></text></text>
+    </view> -->
+    <form bindsubmit="submitInfo" report-submit='true' class="formBox">
+        <button form-type="submit" bindtap="toRedBagItemList" >
+            <!-- 此处我们可以定义一些即将要触发的事件的样式 -->
+            <view class='view-try-getm'>
+                <text class='try-name'>我的试玩红包</text>
+                <text class="text-red">
+                <text class="text-red">{{num}}</text>个未领红包 >
+               </text>
+            </view>
+        </button>
+    </form>
+    <view class='view-gray'></view>
+    <text class='playedgames'>玩过的游戏</text>
+    <!-- <view class='view-gamelist'>
+        <block wx:for="{{userGameList}}" wx:for-item="game" wx:key='index'>
+            <image class='game-image' src='{{userGameList[index].logo_url}}' mode='aspectFill' bindtap="onGameImageCall" data-index="{{index}}">
+            </image>
+        </block>
+    </view> -->
+
+    <scroll-view scroll-y style="height:240rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class='view-gamelist' id="toView">
+        <block wx:for="{{userGameList}}" wx:for-item="game" wx:key='index'>
+            <image class='game-image' src='{{userGameList[index].logo_url}}' mode='aspectFill' bindtap="onGameImageCall" data-index="{{index}}">
+            </image>
+        </block>
+    </view>
+  </scroll-view>
+
+
+    <!-- <text class='text-last' bindtap="onTextC">关注公众号,获取更多游戏。还有机会获得超级大奖哦</text> -->
+    <view class="concernus-view" wx:if="{{concernus}}" bindtap="concernOver">
+        <image class="image-hand" src="../../image/an-hand.gif"></image>
+        <view class="view-concerinfo">
+            <image class="image-concerimage" src="../../image/image-concerimg.png"></image>
+        </view>
+    </view>
+
+    <view class="copyContainer" bindtap="copyActive">
+        <view class="copyContent">
+           <image class="customerService" src="../../image/iv_callus.png"></image>
+           <view>
+                <view class="customerName">
+                     <text>微信号：</text>
+                     <text  selectable="true">{{customerName}}</text>
+                </view>
+                <view class="customerDesc">
+                    添加微信好友，领取现金红包
+                </view>
+           </view>
+        </view>
+    </view>
+    <!-- 底部导航 -->
+    <view class="footerContainer">
+        <block wx:for="{{tabList}}" wx:key="index">
+            <view class="tabList" bindtap="clickTab" wx:if="{{item.active_tab == 0}}" data-index="{{index}}">
+                <image class="select"  src="{{item.tab_off_img}}"></image>
+                <view  class="tabText_off">{{item.tab_name}}</view>
+            </view>
+            <view class="tabList" bindtap="clickTab" wx:if="{{item.active_tab == 1}}" data-index="{{index}}">
+                <image  src="{{item.tab_on_img}}"></image>
+                <view class="tabText_on">{{item.tab_name}}</view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,49 @@
+<!--pages/shareComeIn/shareComeIn.wxml-->
+<view class="shareComeInBox">
+    <view class="shareComeIn">
+        <view class="countDownTime">
+            <text style="margin-left:25rpx">{{countDownTime}}</text>
+        </view>
+        <view class="currentNumBox">
+            <view class="currentNum">
+                <text>{{lott_sum}}</text>元
+            </view>
+            <text class="currentBonuses">当前奖金</text>
+        </view>
+        <view class="timeMessage">
+            每天早晨7:00～8:30 签到，瓜分奖池
+        </view>
+        <view class="getRewards" bindtap="toGiveReward">
+            <view class="getRewardsBtn">领取话费</view>
+        </view>
+    </view>
+    <!-- 红包 -->
+    <view class="redBagContainer" wx:if="{{isShowRedBag}}">
+        <view class="redBagContent" bindtap="openRedBag1">
+            <view wx:if="{{!isShowOpenRedBag}}">
+                <image class="redBagIcon" src="../../image/redbag_big.png"></image>
+                <view class="redShowInfo">
+                    <!-- <view>
+                        <text style="letter-spacing:3rpx;">{{playName}}</text>
+                    </view> -->
+                    <view class="tryPlay">
+                        <text>邀请红包</text>
+                    </view>
+                </view>
+            </view>
+            <image class="redBagGifIcon" wx:if="{{isShowOpenRedBag}}" src="../../image/open_redbag.gif"></image>
+        </view>
+        <view class="redBagInfo" wx:if="{{isAnimationShow == 1}}">
+            <!-- <image class="closeAlert" src="../../image/activeClose.png" bindtap="closeShareAlert"></image> -->
+            <view class="redNumInfo">
+                <view class="redNumber">{{redNumber}}元</view>
+                <view class="getRewardBtn" bindtap="getReward">
+                    <text>领取奖励</text>
+                </view>
+                <button class="shareRewardBtn" data-name="shareBtn" plain="true" open-type='share' data-index="-333">
+                    <text> 分享到群里炫耀一下</text>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>

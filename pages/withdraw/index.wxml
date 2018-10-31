@@ -1,0 +1,29 @@
+<!--logs.wxml-->
+<view class="container">
+    <text class='text-yetx'>余额提现</text>
+    <view class='view-getmo'>
+        <text class='text-no'>话费余额</text>
+        <text class='text-mno'>{{userCoin}}</text>
+        <text class='text-my'>元</text>
+    </view>
+    <view class='view-getmbg'>
+        <view class="view-select-box">
+            <block wx:for="{{selectMoneyNum}}" wx:key="{{selectMoneyNum}}">
+                <view id="{{item.id}}" data-id="{{item.id}}" class="view_click_selcect" bindtap="clickSelectMoney" data-index="{{index}}">
+                    <image src="{{item.select ? item.select_src : item.no_select_src}}"></image>
+                </view>
+            </block>
+        </view>
+        <view class='view-getbtm'>
+            <view class='view-getmbt' bindtap="onGetCoin">申请兑换</view>
+        </view>
+        <view class="phoneText">
+            移动／联通／电信，直充到账，最快秒到账
+        </view>
+    </view>
+    <view class="adsContainer">
+        <section class="adContent">
+             <ad unit-id="adunit-1ca9c2b01286eb09"></ad>
+        </section>
+    </view>
+</view>
